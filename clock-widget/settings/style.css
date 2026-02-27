@@ -1,0 +1,21 @@
+body {
+    background-color: transparent; 
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Segoe UI', 'Arial Black', sans-serif;
+}
+
+#clock-container {
+    color: white;
+    font-size: 3.5rem;
+    font-weight: 800;
+    text-transform: uppercase; /* Ensures FRI, FEB, PM format */
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8), 
+                 0px 0px 20px rgba(0, 0, 0, 0.4);
+    white-space: nowrap;
+    letter-spacing: 1px;
+}
