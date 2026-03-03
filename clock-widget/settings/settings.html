@@ -61,7 +61,7 @@
         const checks = document.querySelectorAll('.opt');
         const out = document.getElementById('result-url');
         function build() {
-            let base = window.location.href.replace('customizer.html', 'index.html');
+            let base = window.location.href.replace('settings.html', 'index.html');
             let p = new URLSearchParams();
             checks.forEach(c => { if(c.checked) p.append(c.dataset.p, 'true'); });
             out.value = p.toString() ? base + '?' + p.toString() : base;
@@ -71,4 +71,4 @@
         build(); // Run immediately to show full URL on start
     </script>
 </body>
-</html>
+</html> 
