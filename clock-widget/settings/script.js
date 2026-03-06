@@ -50,6 +50,6 @@ function updateClock() {
         displayString = [dateStr, timeStr].filter(Boolean).join(' ');
     }
     document.getElementById('clock-container').innerText = displayString;
-
+    
 setInterval(updateClock, 1000);
 updateClock();

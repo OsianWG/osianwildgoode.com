@@ -10,7 +10,7 @@ body {
 }
 
 #clock-container {
-    color: white;
+    color: rgb(255, 255, 255);
     font-size: 3.5rem;
     font-weight: 800;
     text-transform: uppercase; /* Ensures FRI, FEB, PM format */
