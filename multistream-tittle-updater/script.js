@@ -1,6 +1,37 @@
 let ws;
 let activeTab = 'all';
 
+function connectWS() {
+    // Replace with your IP/Port/Password if needed
+    ws = new WebSocket('ws://127.0.0.1:8080/');
+
+    ws.onopen = () => {
+        console.log("Connected!");
+        // HIDE the blur/overlay
+        document.getElementById('connection-overlay').classList.add('hidden-overlay');
+        document.getElementById('connection-status').innerText = 'Connected';
+        document.getElementById('connection-status').className = 'status-online';
+        
+        fetchYouTubeDefaults();
+    };
+
+    ws.onclose = () => {
+        console.log("Disconnected!");
+        // SHOW the blur/overlay
+        document.getElementById('connection-overlay').classList.remove('hidden-overlay');
+        document.getElementById('connection-status').innerText = 'Disconnected';
+        document.getElementById('connection-status').className = 'status-offline';
+        
+        // Try to reconnect every 5 seconds
+        setTimeout(connectWS, 5000);
+    };
+
+    ws.onerror = () => {
+        // Ensure overlay is visible on error
+        document.getElementById('connection-overlay').classList.remove('hidden-overlay');
+    };
+}
+
 function openTab(platform) {
     activeTab = platform;
     
