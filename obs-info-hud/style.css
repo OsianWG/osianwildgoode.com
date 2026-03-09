@@ -29,7 +29,7 @@ body, html {
 #border-container.streaming {
     border: 8px solid;
     border-image-slice: 1;
-    border-image-source: linear-gradient(to right, #a001a5, #20a000, #ff0000);
+    border-image-source: linear-gradient(to right, #00f2fe, #4facfe);
 }
 
 /* State: Both */
