@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multistream Title Updater</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="widget-container">
+    <header>
+        <h2>Multistream Title Updater</h2>
+        <div id="connection-status" class="status-offline">Disconnected</div>
+    </header>
+
+    <div class="tabs">
+        <button class="tab-btn active" onclick="openTab('all')">All</button>
+        <button class="tab-btn" onclick="openTab('twitch')">Twitch</button>
+        <button class="tab-btn" onclick="openTab('kick')">Kick</button>
+        <button class="tab-btn" onclick="openTab('youtube')">YouTube</button>
+    </div>
+
+    <div class="input-section">
+        <label>Title</label>
+        <textarea id="stream-title" placeholder="Enter title..." rows="2"></textarea>
+    </div>
+
+    <div class="input-section">
+        <label>Game/Category</label>
+        <input type="text" id="stream-game" placeholder="e.g. Just Chatting">
+    </div>
+
+    <div class="input-section">
+        <label>Tags</label>
+        <input type="text" id="stream-tags" placeholder="Gaming, Chill, English">
+    </div>
+
+    <div id="youtube-only-fields" class="platform-specific hidden">
+        <hr>
+        <div class="input-section">
+            <label>Description</label>
+            <textarea id="stream-description" placeholder="Enter description..." rows="3"></textarea>
+        </div>
+        <div class="input-section">
+            <label>Visibility</label>
+            <select id="stream-visibility">
+                <option value="public">Public</option>
+                <option value="unlisted">Unlisted</option>
+                <option value="private">Private</option>
+            </select>
+        </div>
+    </div>
+
+<div id="youtube-only-fields" class="platform-specific hidden">
+    <hr>
+    
+    <div id="yt-status-warning" class="warning-box">
+        <p><strong>YOU MUST START YOUR STREAM ON YOUTUBE IN ORDER TO CHANGE ANY STREAM INFORMATION.</strong></p>
+    </div>
+
+    <div id="yt-inputs" class="hidden">
+        <div class="input-section">
+            <label>YouTube Description</label>
+            <textarea id="stream-description" placeholder="Enter description..." rows="3"></textarea>
+        </div>
+        <div class="input-section">
+            <label>Visibility</label>
+            <select id="stream-visibility">
+                <option value="public">Public</option>
+                <option value="unlisted">Unlisted</option>
+                <option value="private">Private</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+    <button id="update-btn" class="main-button">Update Live Info</button>
+</div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
